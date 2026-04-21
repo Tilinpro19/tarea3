@@ -1,5 +1,5 @@
-#ifndef ENTITY_HPP
-#define ENTITY_HPP
+#ifndef ENTITY_H
+#define ENTITY_H
 
 #include <string>
 #include <iostream>
@@ -26,4 +26,4 @@ public:
     }
 };
 
-#endif  
+#endif

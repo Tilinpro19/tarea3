@@ -84,6 +84,8 @@ int main() {
     try {
         motor.execute("mover", {"5.5", "2.1"});
         motor.execute("curar", {"10"});
+        motor.execute("curar", {"5"});
+        motor.execute("curar", {"2"});
         motor.execute("status", {});
 
         cout << "\n--- PRUEBAS DE MACROS ---\n";

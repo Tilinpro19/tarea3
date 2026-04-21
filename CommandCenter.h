@@ -6,7 +6,7 @@
 #include <list>
 #include <map>
 #include <functional>
-#include "Entity.hpp"
+#include "Entity.h"
 
 using namespace std;
 

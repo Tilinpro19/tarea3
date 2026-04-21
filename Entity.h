@@ -1,8 +1,29 @@
-//
-// Created by mando on 20/04/2026.
-//
+#ifndef ENTITY_HPP
+#define ENTITY_HPP
 
-#ifndef TAREA3_ENTITY_H
-#define TAREA3_ENTITY_H
+#include <string>
+#include <iostream>
+#include <sstream>
 
-#endif //TAREA3_ENTITY_H
+using namespace std;
+
+class Entity {
+private:
+    string nombre;
+    int vida;
+    float posX, posY;
+
+public:
+    Entity(string n, int v) : nombre(n), vida(v), posX(0.0f), posY(0.0f) {}
+
+    void modificarVida(int cantidad) { vida += cantidad; }
+    void teletransportar(float x, float y) { posX = x; posY = y; }
+    
+    string obtenerEstado() const {
+        stringstream ss;
+        ss << "[Entidad: " << nombre << " | HP: " << vida << " | Pos: (" << posX << ", " << posY << ")]";
+        return ss.str();
+    }
+};
+
+#endif  

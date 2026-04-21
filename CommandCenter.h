@@ -1,5 +1,5 @@
-#ifndef COMMANDCENTER_HPP
-#define COMMANDCENTER_HPP
+#ifndef COMMANDCENTER_H
+#define COMMANDCENTER_H
 
 #include <iostream>
 #include <string>
@@ -36,7 +36,7 @@ public:
 
     void execute(const string& name, const list<string>& args) {
         map<string, Command>::iterator it = comandos.find(name);
-        
+
         if (it == comandos.end()) {
             throw string("Error: Comando '" + name + "' no registrado.");
         }
@@ -44,7 +44,7 @@ public:
         string antes = entidad.obtenerEstado();
         it->second(args); // Ejecuta el comando
         string despues = entidad.obtenerEstado();
-        
+
         historial.push_back("Cmd: " + name + " | " + antes + " -> " + despues);
     }
 
@@ -55,7 +55,7 @@ public:
 
     void executeMacro(const string& name) {
         map<string, list<pair<string, list<string>>>>::iterator m_it = macros.find(name);
-        
+
         if (m_it != macros.end()) {
             list<pair<string, list<string>>>::iterator it;
             for (it = m_it->second.begin(); it != m_it->second.end(); ++it) {
